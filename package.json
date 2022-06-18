@@ -1,12 +1,12 @@
 {
-  "name": "@linzhinan/vue-code-link",
-  "version": "1.0.5",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "linzhinan",
-  "license": "ISC"
+    "name": "@linzhinan/vue-code-link",
+    "version": "1.0.6",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "linzhinan",
+    "license": "ISC"
 }
