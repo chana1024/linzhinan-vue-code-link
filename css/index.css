@@ -1,0 +1,31 @@
+.clickBall{
+  position: fixed;
+  width: 40px;
+  height:40px;
+  border-radius: 20px;
+  background-color:red;
+  opacity: 0.6;
+}
+.hidSlow{
+      color: #fff;
+      animation: hidetip 1s 1;
+      animation-fill-mode: forwards;
+      -webkit-animation: hidetip 1s 1;
+      -webkit-animation-fill-mode: forwards;
+}
+@keyframes hidetip {
+      from {
+        transform:scale(1,1);
+      }
+      to {
+        transform:scale(0,0);
+      }
+    }
+@-webkit-keyframes hidetip {
+      from {
+        transform:scale(1,1);
+      }
+      to {
+        transform:scale(0,0);
+      }
+}
