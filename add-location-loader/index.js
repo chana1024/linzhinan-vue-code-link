@@ -1,14 +1,17 @@
 // 引入fs模块
 var fs = require('fs');
+const pathUtil = require("../utils/pathUtil.js")
 
 module.exports = function(source) {
   const {
     resourcePath
   } = this;
+  console.info(resourcePath)
   return sourceCodeChange(source, resourcePath);
 };
 
 function sourceCodeChange(source, resourcePath) {
+  resourcePath = resourcePath.substring(pathUtil.projectBasePath.length) // vue代码相对路径
   return codeLineTrack(source, resourcePath);
 }
 
@@ -38,9 +41,9 @@ function addLineAttr(lineStr, line, resourcePath, templateIndex) {
         templateIndex.index -= 1;
       }
 
-      if (templateIndex.index > 0 && item && item.indexOf("template") == -1 && item.indexOf("<script") == -1 && item.indexOf("<style") == -1) {
+      if (templateIndex.index > 0 && item && item.indexOf("template") == -1) {
         let regx = new RegExp(`${item}`, "g");
-        let location = `${item} codelocation="${resourcePath}:${line}"`;
+        let location = `${item} code-location="${resourcePath}:${line}"`;
         lineStr = lineStr.replace(regx, location);
       }
     });
