@@ -5,6 +5,7 @@
   border-radius: 20px;
   background-color:red;
   opacity: 0.6;
+  z-index:99999
 }
 .hidSlow{
       color: #fff;
