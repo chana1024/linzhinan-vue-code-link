@@ -1,7 +1,4 @@
 const axios = require('axios')
-if (process.env.NODE_ENV === 'development') {
-    const indexcss = require("../css/index.css")
-}
 
 function uuid(len, radix) {
     var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
@@ -63,6 +60,7 @@ function openFileInEditor(e) {
 
 function init() {
     if (process.env.NODE_ENV === 'development') {
+        const indexcss = require("../css/index.css")
         document.oncontextmenu = function() {
             return false;
         }
