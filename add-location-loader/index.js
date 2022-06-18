@@ -6,7 +6,6 @@ module.exports = function(source) {
   const {
     resourcePath
   } = this;
-  console.info(resourcePath)
   return sourceCodeChange(source, resourcePath);
 };
 
