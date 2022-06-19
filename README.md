@@ -1,7 +1,7 @@
 ![Animation](https://user-images.githubusercontent.com/62974111/174468768-dcacbfaa-3565-4608-bbb3-9a1b81da4ff0.gif)
-#通过shift+右键点击页面元素,快速在vscode中定位代码位置
+# 通过shift+右键点击页面元素,快速在vscode中定位代码位置
 ---
-#安装
+# 安装
 ```
     //1、install package
     npm install -s @linzhinan/vue-code-link
@@ -25,9 +25,9 @@
     import { vueCodeLinkClient } from '@linzhinan/vue-code-link'
     vueCodeLinkClient.init()
 ```
-#使用
+# 使用
 shift+鼠标右键点击页面元素即可
-#注意事项 
+# 注意事项 
  * 插件会自动根据生成与开发环境决定是否启用,不会对生产环境造成任何影响
  * 插件启用时,会禁用默认的鼠标右键菜单
  * 暂时只支持vue + webpack + vscode
