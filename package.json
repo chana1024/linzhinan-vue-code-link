@@ -1,12 +1,12 @@
 {
     "name": "@linzhinan/vue-code-link",
-    "version": "1.0.20",
+    "version": "1.0.23",
     "description": "",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [],
+    "keywords": ["vue", "code link", "link", "vscode", "vue-code-link", "click page", "location", "代码定位"],
     "author": "linzhinan",
     "license": "ISC",
     "dependencies": {
