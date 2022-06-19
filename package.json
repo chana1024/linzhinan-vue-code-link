@@ -1,6 +1,6 @@
 {
     "name": "@linzhinan/vue-code-link",
-    "version": "1.0.25",
+    "version": "1.0.26",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -11,5 +11,9 @@
     "license": "MIT",
     "dependencies": {
         "axios": "0.24.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chana1024/linzhinan-vue-code-link.git"
     }
 }
