@@ -30,9 +30,11 @@ function uuid(len, radix) {
 }
 
 function sendRequestToOpenFileInEditor(filePath) {
-    const port = process.env.port || process.env.npm_config_port || 80 // 端口
+    const protocol = window.location.protocol ? window.location.protocol : 'http:'
+    const hostname = window.location.hostname ? window.location.hostname : 'localhost'
+    const port = window.location.port ? window.location.port : '80'
     axios
-        .get(`http://localhost:${port}/code`, {
+        .get(`${protocol}//${hostname}:${port}/code`, {
             params: {
                 filePath: filePath,
             },
