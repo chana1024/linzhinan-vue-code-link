@@ -25,6 +25,14 @@
     import { vueCodeLinkClient } from '@linzhinan/vue-code-link'
     vueCodeLinkClient.init()
 ```
+# vscode 的code 命令
+ * vscode的定位功能是基于vscode的code命令实现的，所以请确认code命令是否有效(cmd或shell里直接执行code)
+ * 若code命令找不到请如下操作: \
+  方案1 \
+ 使用command + shift + p (注意window 下使用 ctrl + shift + p ) 然后搜索code，选择 install 'code' command in path。 \
+  方案2 \
+ 也可直接手动将code命令的路径添加到环境变量中
+ 
 # 使用
 shift+鼠标右键点击页面元素即可
 # 注意事项 
