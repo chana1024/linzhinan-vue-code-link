@@ -1,6 +1,6 @@
 {
     "name": "@linzhinan/vue-code-link",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -8,5 +8,8 @@
     },
     "keywords": [],
     "author": "linzhinan",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "axios": "0.24.0"
+    }
 }
