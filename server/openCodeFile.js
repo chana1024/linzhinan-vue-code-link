@@ -8,12 +8,11 @@ function openCodeFileInWebStorm(path) {
   filePath = pathUtil.projectBasePath + filePath;
 
   if (os() === "win32") {
-    child_process.exec(`webstorm  --line ${linePath} ${filePath}`, {
+    child_process.exec(`webstorm64.exe  --line ${linePath} ${filePath}`, {
       env: process.env,
     });
   } else {
-    console.info(`webstorm  --line ${linePath} ${filePath}`);
-    child_process.exec(`webstorm64.exe  --line ${linePath} ${filePath}`, {
+    child_process.exec(`webstorm64  --line ${linePath} ${filePath}`, {
       env: process.env,
     });
   }
