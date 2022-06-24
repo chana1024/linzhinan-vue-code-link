@@ -1,19 +1,46 @@
 {
-    "name": "@linzhinan/vue-code-link",
-    "version": "1.0.29",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@linzhinan/vue-code-link",
+  "version": "1.0.29",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "code link",
+    "link",
+    "vscode",
+    "vue-code-link",
+    "click page",
+    "location",
+    "vue-dev-code-link",
+    "dev",
+    "click",
+    "代码定位",
+    "点击页面定位",
+    "点击",
+    "定位",
+    "页面元素"
+  ],
+  "author": "linzhinan",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.24.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chana1024/linzhinan-vue-code-link.git"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     },
-    "keywords": ["vue", "code link", "link", "vscode", "vue-code-link", "click page", "location", "vue-dev-code-link", "dev", "click", "代码定位", "点击页面定位", "点击", "定位", "页面元素"],
-    "author": "linzhinan",
-    "license": "MIT",
-    "dependencies": {
-        "axios": "0.24.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/chana1024/linzhinan-vue-code-link.git"
+    "ghooks": {
+      "commit-msg": "./validate-commit-msg.js"
     }
+  }
 }
