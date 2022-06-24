@@ -62,7 +62,7 @@ function openFileInEditor(e) {
   sendRequestToOpenFileInEditor(filePath);
 }
 
-function clickBall() {
+function clickBall(e) {
   const element = document.createElement("div");
   const elementId = "clickBall" + uuid(8, 16);
   element.id = elementId;
@@ -80,7 +80,7 @@ function init() {
     document.onmousedown = function (e) {
       if (e.shiftKey && e.button === 0) {
         e.preventDefault();
-        clickBall();
+        clickBall(e);
         openFileInEditor(e);
       }
     };
