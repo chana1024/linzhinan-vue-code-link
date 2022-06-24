@@ -2,6 +2,8 @@
 
 # 通过 shift+右键点击页面元素,快速在 vscode 中定位代码位置
 
+# [changelog](https://github.com/chana1024/linzhinan-vue-code-link/blob/master/CHANGELOG.md)
+
 # 引入
 
 ```
