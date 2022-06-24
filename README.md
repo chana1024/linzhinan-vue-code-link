@@ -1,6 +1,6 @@
 ![Animation](https://user-images.githubusercontent.com/62974111/174468768-dcacbfaa-3565-4608-bbb3-9a1b81da4ff0.gif)
 
-# 通过 shift+右键点击页面元素,快速在 vscode 中定位代码位置
+# 通过 shift+左键点击页面元素,快速在 vscode 中定位代码位置
 
 # [changelog](https://github.com/chana1024/linzhinan-vue-code-link/blob/master/CHANGELOG.md)
 
@@ -58,13 +58,12 @@
 
 # 使用
 
-shift+鼠标右键点击页面元素即可
+shift+鼠标左键点击页面元素即可
 
 # 注意事项
 
 - 插件会自动根据生成与开发环境决定是否启用,不会对生产环境造成任何影响
-- 插件启用时,会禁用默认的鼠标右键菜单
-- 暂时只支持 vue + webpack + vscode
+- 暂时只支持 vue + webpack + vscode/webstorm
 - 代码定位精确到行，但定位只限于项目 src 目录下的代码,后续会考虑添加可定位目录的配置
 - 该项目借鉴了一位前端大佬的文章，[文章链接](https://mp.weixin.qq.com/s/AZQTK_lk8BxxWZCDU5P_Yg)。文章里有详细的设计思路和代码片段。
   本来打算直接用大佬的项目，但是对方说暂时只在他们公司内部使用，故本人自己写了一个简单版的。
