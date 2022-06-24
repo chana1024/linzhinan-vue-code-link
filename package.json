@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -33,7 +34,8 @@
     "url": "https://github.com/chana1024/linzhinan-vue-code-link.git"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "conventional-changelog": "^3.1.25"
   },
   "config": {
     "commitizen": {
