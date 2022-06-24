@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -s",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
