@@ -1,0 +1,6 @@
+- edit version in package.json
+- git cz
+- npm run changelog
+- gc
+- gp
+- npm run publish
