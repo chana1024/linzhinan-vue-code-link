@@ -18,6 +18,7 @@ function codeLineTrack(str, resourcePath) {
   //template标识，用于判断代码是否在template内，限制只处理tempalte下的代码
   let templateIndex = {
     index: 0,
+    vhtml: 0
   };
   lineList.forEach((item, index) => {
     newList.push(addLineAttr(item, index + 1, resourcePath, templateIndex)); // 添加位置属性，index+1为具体的代码行号
@@ -26,8 +27,9 @@ function codeLineTrack(str, resourcePath) {
 }
 
 function addLineAttr(lineStr, line, resourcePath, templateIndex) {
-  let reg = /(<[\w-]+)|(<\/template)/g;
+  let reg = /(<[\w-]+)|(<\/template)|(v-html=")/g;
   let leftTagList = lineStr.match(reg);
+      console.log(leftTagList);
   if (leftTagList) {
     leftTagList = Array.from(new Set(leftTagList));
     leftTagList.forEach((item) => {
