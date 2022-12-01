@@ -27,9 +27,61 @@ function codeLineTrack(str, resourcePath) {
 }
 
 function addLineAttr(lineStr, line, resourcePath, templateIndex) {
-  let reg = /(<[\w-]+)|(<\/template)|(v-html=")/g;
+    let vhtmlReg = /v-html=\s?"/g;
+    if (vhtmlReg.test(lineStr)||templateIndex.vhtml>0) {
+        return parseWhenHasVhtml(lineStr, line, resourcePath, templateIndex);
+    }
+    else{
+        return parse(lineStr, line, resourcePath, templateIndex);
+    }
+}
+function parseWhenHasVhtml(lineStr, line, resourcePath, templateIndex){
+  let reg = /(<[\w-]+)|(<\/template)|(v-html=\s?")|([^\\=]")/g;
   let leftTagList = lineStr.match(reg);
-      console.log(leftTagList);
+  if (leftTagList) {
+    leftTagList = Array.from(new Set(leftTagList));
+    leftTagList.forEach((item) => {
+      if (item && item.indexOf("<template") !== -1) {
+        templateIndex.index += 1;
+      }
+      if (item && item.indexOf("</template") !== -1) {
+        templateIndex.index -= 1;
+      }
+      if (templateIndex.index > 0 && item && item.indexOf("template") == -1) {
+          if(new RegExp(`v-html=\s?"`).test(item)){
+            templateIndex.vhtml+=1;
+          }
+          if(new RegExp(`[^\=]"`).test(item)&&templateIndex.vhtml>0){
+              templateIndex.vhtml-=1;
+          }
+        console.log(item+templateIndex.vhtml);
+        console.log(!new RegExp(`v-html=\s?"`).test(item));
+        console.log(!new RegExp(`[^\=]"`).test(item));
+          if(templateIndex.vhtml<=0&&!new RegExp(`v-html=\s?"`).test(item)&&!new RegExp(`[^\=]"`).test(item)){
+            if (new RegExp(`${item}>`, "g").test(lineStr)) {
+              let regx = new RegExp(`${item}>`, "g");
+              let location = `${item} code-location="${resourcePath}:${line}">`;
+              lineStr = lineStr.replace(regx, location);
+            }
+            //对有属性的标签如<div class="test">,只替换开头的标签"<div "(包含空格，用于避免如下问题:
+            //<a-b><a></a></a-b> -> <a codexx-b><a codexx></a></a-b>:当长标签字符包含短标签字符时，短标签的替换影响长标签)
+            else {
+              let regx = new RegExp(`${item}\\s+`, "g");
+              let location = `${item} code-location="${resourcePath}:${line}" `;
+              lineStr = lineStr.replace(regx, location);
+            }
+            console.log("parse");
+          }else{
+            console.log("no parse");
+          }
+      }
+    });
+  }
+  return lineStr;
+}
+function parse(lineStr, line, resourcePath, templateIndex){
+  let reg = /(<[\w-]+)|(<\/template)/g;
+  let leftTagList = lineStr.match(reg);
   if (leftTagList) {
     leftTagList = Array.from(new Set(leftTagList));
     leftTagList.forEach((item) => {
