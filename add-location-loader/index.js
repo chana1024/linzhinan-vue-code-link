@@ -54,9 +54,6 @@ function parseWhenHasVhtml(lineStr, line, resourcePath, templateIndex){
           if(new RegExp(`[^\=]"`).test(item)&&templateIndex.vhtml>0){
               templateIndex.vhtml-=1;
           }
-        console.log(item+templateIndex.vhtml);
-        console.log(!new RegExp(`v-html=\s?"`).test(item));
-        console.log(!new RegExp(`[^\=]"`).test(item));
           if(templateIndex.vhtml<=0&&!new RegExp(`v-html=\s?"`).test(item)&&!new RegExp(`[^\=]"`).test(item)){
             if (new RegExp(`${item}>`, "g").test(lineStr)) {
               let regx = new RegExp(`${item}>`, "g");
@@ -70,9 +67,7 @@ function parseWhenHasVhtml(lineStr, line, resourcePath, templateIndex){
               let location = `${item} code-location="${resourcePath}:${line}" `;
               lineStr = lineStr.replace(regx, location);
             }
-            console.log("parse");
           }else{
-            console.log("no parse");
           }
       }
     });
