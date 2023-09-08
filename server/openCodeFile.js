@@ -6,16 +6,9 @@ function openCodeFileInWebStorm(path) {
   let filePath = path.split(":")[0];
   let linePath = path.split(":")[1];
   filePath = pathUtil.projectBasePath + filePath;
-
-  if (os() === "win32") {
-    child_process.exec(`webstorm64.exe  --line ${linePath} ${filePath}`, {
-      env: process.env,
-    });
-  } else {
-    child_process.exec(`webstorm64  --line ${linePath} ${filePath}`, {
-      env: process.env,
-    });
-  }
+  child_process.exec(`webstorm64.exe  ${filePath}:${linePath} `, {
+  env: process.env,
+});
 }
 function openCodeFileInVscode(path) {
   let filePath = pathUtil.projectBasePath + path;
