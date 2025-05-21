@@ -16,6 +16,12 @@ function openCodeFileInVscode(path) {
     env: process.env,
   });
 }
+function openCodeFileInCursor(path) {
+  let filePath = pathUtil.projectBasePath + path;
+  child_process.exec(`cursor -r -g ${filePath}`, {
+    env: process.env,
+  });
+}
 function os() {
   "use strict";
   const os = require("os");
@@ -37,6 +43,8 @@ function os() {
 exports.openCodeFile = function (path) {
   if (serverConfig.getEditor() === "vscode") {
     openCodeFileInVscode(path);
+  }else if (serverConfig.getEditor() === "cursor") {
+    openCodeFileInCursor(path);
   } else if (serverConfig.getEditor() === "webstorm") {
     openCodeFileInWebStorm(path);
   } else {
